@@ -23,7 +23,6 @@ File: 4_total_crime_city.sh
 
 Command: `./4_total_crime_city.sh <column_number>`
 
-
 *5. Same question with the average - look at question 1 to get the number of rows & use tr to remove the empty white spaces and get the number*
 
 File: 5_average_crime_city.sh
@@ -67,7 +66,7 @@ Command: `./mongo_import.sh <database_name> <csv_file1> [<csv_file2> <csv_file3>
 A minimum of two arguments are required to run the file - 
 1. Database name
 2. csv file names separated by space
-
+   
 A collection is formed for each csv file passed, with the collection name the same as that of each file.
 
 ********************************************************************************************************************
@@ -78,14 +77,12 @@ These files are present in the Queries folder inside 2_Data_Management.
 
 ***1. MySQL Queries:***
 
-mysql_queries.sql - This script will run all the MySQL Queries - Q1 to Q8
-
+mysql_queries.sql - This script will run all the MySQL Queries - Q1 to Q8<br>
 Command: `mysql -u <username> -p <database_name> < mysql_queries.sql`
 
 ***2. MongoDB Queries***
 
-mongo_queries.js -  This script will run all the MongoDB Queries - Q1 to Q8
-
+mongo_queries.js -  This script will run all the MongoDB Queries - Q1 to Q8<br>
 Command: `mongo <database_name> < mongo_queries.js`
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -106,34 +103,36 @@ The file yellow_tripdata_2019-01.csv must be present on the namenode.
 
 Accessing namenode and creating input:
 
-1. `docker exec -it namenode bash`
-2. `hdfs dfs -mkdir /<input_directory>`
-3. `hdfs dfs -copyFromLocal yellow_tripdata_2019-01.csv /<input_directory>`
+1. `docker exec -it namenode bash`<br>
+2. `hdfs dfs -mkdir /<input_directory>`<br>
+3. `hdfs dfs -copyFromLocal yellow_tripdata_2019-01.csv /<input_directory>`<br><br>
 
 This will create an input_directory on the dfs, and copy the data file onto it.
 
 Running the job:
 
-`export HADOOP_CLASSPATH=/usr/lib/jvm/java-1.8.0-openjdk-amd64/lib/tools.jar` (export hadoop classpath)
-
-`hadoop com.sun.tools.javac.Main <filename>.java (compile java file)`
-
-`jar cf <jar_name>.jar <filename>*.class (create jar file)`
-
-`hadoop jar <jar_name>.jar <filename> /input /<output_directory> (run mapreduce job)`
+`export HADOOP_CLASSPATH=/usr/lib/jvm/java-1.8.0-openjdk-amd64/lib/tools.jar` (export hadoop classpath)<br>
+`hadoop com.sun.tools.javac.Main <filename>.java (compile java file)`<br>
+`jar cf <jar_name>.jar <filename>*.class (create jar file)`<br>
+`hadoop jar <jar_name>.jar <filename> /input /<output_directory> (run mapreduce job)`<br><br>
 
 
 The output_directory should not be already present.
 
 To check the output:
 
+
 `hdfs dfs -cat /<output_directory>/part-r-00000`
 
+
+
 The questions and their respective java files are:
-Q1 - AvgPassenger_Q1.java
-Q2 - AvgTripDistance_Q2.java
-Q4 - AvgPassenger_Q4A.java (Overall), AvgPassenger_Q4B.java (Weekdays and Weekends)
+
+Q1 - AvgPassenger_Q1.java<br>
+Q2 - AvgTripDistance_Q2.java<br>
+Q4 - AvgPassenger_Q4A.java (Overall), AvgPassenger_Q4B.java (Weekdays and Weekends)<br>
 Q5 - AvgTripDistance_Q5A.java (Overall), AvgTripDistance_Q5B.java (Weekdays and Weekends)
+
 
 For Q3, a bash script is used. The yellow_tripdata_2019-01.csv file needs to be passed as argument.
 File: most_payment_type.sh
