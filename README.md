@@ -14,18 +14,17 @@ File: 2_number_of_columns.sh
 
 *3. For a given city (given as a column number, e.g., 10=Sydney), what is the type of crime on top of the crime list (cat, cut, sort, head)?*
         
-File: 3_crime_city_top.sh 
+File: 3_crime_city_top.sh<br>
 Command: `./3_crime_city_top <column_number>`
 
 *4. Find the number of crimes for a given city (given as a column number, e.g., 10=Sydney): create a bash script that reads all the rows (see previous question) and sums up the crime values*
         
-File: 4_total_crime_city.sh
-
+File: 4_total_crime_city.sh<br>
 Command: `./4_total_crime_city.sh <column_number>`
 
 *5. Same question with the average - look at question 1 to get the number of rows & use tr to remove the empty white spaces and get the number*
 
-File: 5_average_crime_city.sh
+File: 5_average_crime_city.sh<br>
 Command: `./5_average_crime_city.sh <column_number>`
    
 *6. Get the city with the lowest average crime. Create a bash scripts that goes through all the cities, compute the average crime rate and keep only the city with the lowest value. Finally display the city and the average number of crimes.*
